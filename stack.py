@@ -1,4 +1,6 @@
+# Initially from:
 # http://interactivepython.org/runestone/static/pythonds/BasicDS/ImplementingaStackinPython.html
+# with some modifications
 
 class Stack:
     def __init__(self):

@@ -14,36 +14,34 @@ def main():
 def stack():
     if request.method == 'GET':
         try:
-            return s.pop(), status.HTTP_200_OK
+            return s.pop()
         except IndexError as ie:
             return str(ie), status.HTTP_500_INTERNAL_SERVER_ERROR
     elif request.method == 'POST':
         try:
             s.push(request.get_data())
-            return request.get_data(), status.HTTP_200_OK
+            return request.get_data()
         except:
             pass
-
     elif request.method == 'DELETE':
         try:
             s.clear()
-            return "", status.HTTP_200_OK
+            return
         except:
             pass
-
     else:
         return "", status.HTTP_405_METHOD_NOT_ALLOWED
 
 @application.route("/stack/size", methods = ['GET'])
 def size():
     if request.method == 'GET':
-        return str(s.size()), status.HTTP_200_OK
+        return str(s.size())
 
 @application.route("/stack/peek", methods = ['GET'])
 def peek():
     if request.method == 'GET':
         try:
-            return s.peek(), status.HTTP_200_OK
+            return s.peek()
         except IndexError as ie:
             return str(ie), status.HTTP_500_INTERNAL_SERVER_ERROR
 
