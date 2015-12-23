@@ -3,49 +3,73 @@ from flask.ext.api import status
 from stack import Stack
 
 application = Flask(__name__)
-
 application.config.from_pyfile('config.py')
 
-s = Stack()
+# Stack objects container
+wsStackList = []
 
 @application.route("/")
 def main():
     return "Hello World"
 
-@application.route("/stack", methods = ['GET', 'POST', 'DELETE'])
-def stack():
+# Manage the list of stack objs
+@application.route("/stack", methods = ['GET', 'POST'])
+def stackMgr():
+    if request.method == 'GET':
+        for i in wsStackList:
+            print i
+        return str(wsStackList)
+    elif request.method == 'POST':
+        s = Stack()
+        wsStackList.append(s)
+        return str(wsStackList.index(s))
+
+# Manage stack operations
+@application.route("/stack/<int:id>", methods = ['GET', 'POST', 'DELETE'])
+def stack(id):
     if request.method == 'GET':
         try:
-            return s.pop()
-        except IndexError as ie:
+            return str(wsStackList[id])
+        except (IndexError, ValueError) as ie:
             return str(ie), status.HTTP_500_INTERNAL_SERVER_ERROR
+    # Push to stack
     elif request.method == 'POST':
         try:
-            s.push(request.get_data())
+            wsStackList[id].push(request.get_data())
             return request.get_data()
-        except:
-            pass
+        except (IndexError, ValueError) as ie:
+            return str(ie), status.HTTP_500_INTERNAL_SERVER_ERROR
+    # Pop from stack
     elif request.method == 'DELETE':
         try:
-            s.clear()
-            return
-        except:
-            pass
-    else:
-        return "", status.HTTP_405_METHOD_NOT_ALLOWED
+            return wsStackList[id].pop()
+        except (IndexError, ValueError) as ie:
+            return str(ie), status.HTTP_500_INTERNAL_SERVER_ERROR
 
-@application.route("/stack/size", methods = ['GET'])
-def size():
+# Retrieve stack size
+@application.route("/stack/<int:id>/size", methods = ['GET'])
+def stackSize(id):
     if request.method == 'GET':
-        return str(s.size())
+        return str(wsStackList[id].size())
 
-@application.route("/stack/peek", methods = ['GET'])
-def peek():
+# Retrieve topmost element of stack
+@application.route("/stack/<int:id>/peek", methods = ['GET'])
+def stackPeek(id):
     if request.method == 'GET':
         try:
-            return s.peek()
-        except IndexError as ie:
+            return str(wsStackList[id].peek())
+        except (IndexError, ValueError) as ie:
             return str(ie), status.HTTP_500_INTERNAL_SERVER_ERROR
+
+# Clear the stack. Remove all elements.
+@application.route("/stack/<int:id>/clear", methods = ['DELETE'])
+def stackClear(id):
+    if request.method == 'DELETE':
+        try:
+            return str(wsStackList[id].clear())
+        except (IndexError, ValueError) as ie:
+            return str(ie), status.HTTP_500_INTERNAL_SERVER_ERROR
+        
 
 if __name__ == "__main__":
     application.debug = application.config["DEBUG"]
