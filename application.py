@@ -20,7 +20,7 @@ def stackMgr():
             print i
         return str(wsStackList)
     elif request.method == 'POST':
-        s = Stack()
+        s = Stack(application.config["STACK_MODE"])
         wsStackList.append(s)
         return str(wsStackList.index(s))
 

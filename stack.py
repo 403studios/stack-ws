@@ -1,25 +1,10 @@
-# Initially from:
-# http://interactivepython.org/runestone/static/pythonds/BasicDS/ImplementingaStackinPython.html
-# with some modifications
+from wsStackImplementation import wsStack
 
 class Stack:
-    def __init__(self):
-        self.items = []
-
-    def isEmpty(self):
-        return self.items == []
-
-    def push(self, item):
-        self.items.append(item)
-
-    def pop(self):
-        return self.items.pop()
-
-    def peek(self):
-        return self.items[len(self.items)-1]
-
-    def size(self):
-        return len(self.items)
-
-    def clear(self):
-        self.items = []
+    def __init__(self,type):
+        # FIXME: Must be a better way to do this than string comparison
+        if type == "wsStack":
+            wsStack()
+        else:
+            raise NotImplementedError
+        
