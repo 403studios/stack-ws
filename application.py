@@ -4,6 +4,8 @@ from stack import Stack
 
 application = Flask(__name__)
 
+application.config.from_pyfile('config.py')
+
 s = Stack()
 
 @application.route("/")
@@ -46,5 +48,5 @@ def peek():
             return str(ie), status.HTTP_500_INTERNAL_SERVER_ERROR
 
 if __name__ == "__main__":
-    application.debug = True
-    application.run(host='0.0.0.0')
+    application.debug = application.config["DEBUG"]
+    application.run(host=application.config["HOST"], port=application.config["PORT"])
