@@ -1,7 +1,7 @@
 from flask import Flask, request
 from flask.ext.api import status
 from flask.ext.autodoc import Autodoc
-from stack import Stack
+from stackFactory import AbstractStackFactory
 
 application = Flask(__name__)
 application.config.from_pyfile('config.py')
@@ -35,9 +35,9 @@ def stackMgr():
             print i
         return str(wsStackList)
     elif request.method == 'POST':
-        s = Stack(application.config["STACK_MODE"])
-        wsStackList.append(s)
-        return str(wsStackList.index(s))
+        stack = factory.getStackFactory()
+        wsStackList.append(stack)
+        return str(wsStackList.index(stack))
 
 @application.route("/stack/<int:id>", methods=['GET', 'POST', 'DELETE'])
 @auto.doc()
@@ -129,6 +129,7 @@ def documentation():
     return auto.html()
 
 if __name__ == "__main__":
+    factory = AbstractStackFactory.getStackFactory(application.config["STACK_FACTORY"])
     application.debug = application.config["DEBUG"]
     application.run(host=application.config["HOST"], port=application.config["PORT"])
 

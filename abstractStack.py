@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
-class AbstractBaseStack(object):
+class AbstractStack(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod

@@ -1,10 +1,31 @@
-from wsStackImpl import wsStack
+'''
+Initial implementation from:
+http://interactivepython.org/runestone/static/pythonds/BasicDS/ImplementingaStackinPython.html
 
-class Stack(object):
-    def __init__(self, type):
-        # FIXME: Must be a better way to do this than string comparison
-        if type == "wsStack":
-            wsStack()
-        else:
-            raise NotImplementedError
+With modification by Rob McLeod (rob.mcleod@gmail.com)
+2015-12-24
+    - Add clear method to clear all elements from the stack
+'''
+from abstractStack import AbstractStack
 
+class Stack(AbstractStack):
+    def __init__(self):
+        self.items = []
+
+    def isEmpty(self):
+        return self.items == []
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
+
+    def peek(self):
+        return self.items[len(self.items)-1]
+
+    def size(self):
+        return len(self.items)
+
+    def clear(self):
+        self.items = []
