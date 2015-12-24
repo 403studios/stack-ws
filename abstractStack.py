@@ -24,7 +24,7 @@ class AbstractStack(object):
 
     @abstractmethod
     def size(self):
-        '''Retrieve the topmost item from the stack.'''
+        '''Retrieve the number of elements in the stack.'''
         return
 
     @abstractmethod

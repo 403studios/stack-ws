@@ -10,17 +10,17 @@ auto = Autodoc(application)
 # Stack objects container
 wsStackList = []
 
-@application.route("/")
+@application.route('/')
 @auto.doc()
 def main():
     '''
     Test endpoint.
-    GETs to this endpoint will retrieve the string "Hello World".
+    GETs to this endpoint will retrieve the string 'Hello World'.
     '''
-    return "Hello World"
+    return 'Hello World'
 
 # Manage the list of stack objs
-@application.route("/stack", methods=['GET', 'POST'])
+@application.route('/stack', methods=['GET', 'POST'])
 @auto.doc()
 def stackMgr():
     '''
@@ -39,7 +39,7 @@ def stackMgr():
         wsStackList.append(stack)
         return str(wsStackList.index(stack))
 
-@application.route("/stack/<int:id>", methods=['GET', 'POST', 'DELETE'])
+@application.route('/stack/<int:id>', methods=['GET', 'POST', 'DELETE'])
 @auto.doc()
 def stack(id):
     '''
@@ -78,7 +78,7 @@ def stack(id):
         except (IndexError, ValueError) as ie:
             return str(ie), status.HTTP_500_INTERNAL_SERVER_ERROR
 
-@application.route("/stack/<int:id>/size", methods=['GET'])
+@application.route('/stack/<int:id>/size', methods=['GET'])
 @auto.doc()
 def stackSize(id):
     '''
@@ -88,7 +88,7 @@ def stackSize(id):
     if request.method == 'GET':
         return str(wsStackList[id].size())
 
-@application.route("/stack/<int:id>/peek", methods=['GET'])
+@application.route('/stack/<int:id>/peek', methods=['GET'])
 @auto.doc()
 def stackPeek(id):
     '''
@@ -103,7 +103,7 @@ def stackPeek(id):
         except (IndexError, ValueError) as ie:
             return str(ie), status.HTTP_500_INTERNAL_SERVER_ERROR
 
-@application.route("/stack/<int:id>/clear", methods=['DELETE'])
+@application.route('/stack/<int:id>/clear', methods=['DELETE'])
 @auto.doc()
 def stackClear(id):
     '''
@@ -128,8 +128,11 @@ def documentation():
     '''
     return auto.html()
 
-if __name__ == "__main__":
-    factory = AbstractStackFactory.getStackFactory(application.config["STACK_FACTORY"])
-    application.debug = application.config["DEBUG"]
-    application.run(host=application.config["HOST"], port=application.config["PORT"])
+if __name__ == '__main__':
+    factory = AbstractStackFactory.getStackFactory(
+                application.config['STACK_FACTORY'])
+    application.debug = application.config['DEBUG']
+    application.run(
+                    host=application.config['HOST'],
+                    port=application.config['PORT'])
 
