@@ -8,7 +8,9 @@ With modification by Rob McLeod (rob.mcleod@gmail.com)
 '''
 from abstractStack import AbstractStack
 
+''' Stack implementation '''
 class Stack(AbstractStack):
+    ''' Constructor '''
     def __init__(self):
         self.items = []
 
