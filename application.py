@@ -13,7 +13,7 @@ def main():
     return "Hello World"
 
 # Manage the list of stack objs
-@application.route("/stack", methods = ['GET', 'POST'])
+@application.route("/stack", methods=['GET', 'POST'])
 def stackMgr():
     if request.method == 'GET':
         for i in wsStackList:
@@ -25,7 +25,7 @@ def stackMgr():
         return str(wsStackList.index(s))
 
 # Manage stack operations
-@application.route("/stack/<int:id>", methods = ['GET', 'POST', 'DELETE'])
+@application.route("/stack/<int:id>", methods=['GET', 'POST', 'DELETE'])
 def stack(id):
     if request.method == 'GET':
         try:
@@ -47,13 +47,13 @@ def stack(id):
             return str(ie), status.HTTP_500_INTERNAL_SERVER_ERROR
 
 # Retrieve stack size
-@application.route("/stack/<int:id>/size", methods = ['GET'])
+@application.route("/stack/<int:id>/size", methods=['GET'])
 def stackSize(id):
     if request.method == 'GET':
         return str(wsStackList[id].size())
 
 # Retrieve topmost element of stack
-@application.route("/stack/<int:id>/peek", methods = ['GET'])
+@application.route("/stack/<int:id>/peek", methods=['GET'])
 def stackPeek(id):
     if request.method == 'GET':
         try:
@@ -62,15 +62,15 @@ def stackPeek(id):
             return str(ie), status.HTTP_500_INTERNAL_SERVER_ERROR
 
 # Clear the stack. Remove all elements.
-@application.route("/stack/<int:id>/clear", methods = ['DELETE'])
+@application.route("/stack/<int:id>/clear", methods=['DELETE'])
 def stackClear(id):
     if request.method == 'DELETE':
         try:
             return str(wsStackList[id].clear())
         except (IndexError, ValueError) as ie:
             return str(ie), status.HTTP_500_INTERNAL_SERVER_ERROR
-        
 
 if __name__ == "__main__":
     application.debug = application.config["DEBUG"]
     application.run(host=application.config["HOST"], port=application.config["PORT"])
+

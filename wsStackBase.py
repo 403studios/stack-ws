@@ -2,7 +2,7 @@ from abc import ABCMeta, abstractmethod
 
 class AbstractBaseStack(object):
     __metaclass__ = ABCMeta
-    
+
     @abstractmethod
     def isEmpty(self):
         return
