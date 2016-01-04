@@ -1,37 +1,38 @@
-''' stackFactory '''
 from abc import ABCMeta, abstractmethod
 
-''' AbstractStack '''
+'''
+AbstractStack base class. All derived classes must provide a concrete
+implementation to these methods.
+'''
 class AbstractStack(object):
-    ''' This is the AbstractFactory class. '''
     __metaclass__ = ABCMeta
 
+    ''' Check if the stack is empty. '''
     @abstractmethod
     def isEmpty(self):
-        ''' Check if the stack is empty. '''
         return
 
+    ''' Add item to the stack. '''
     @abstractmethod
     def push(self, item):
-        ''' Add item to the stack. '''
         return
 
+    ''' Retrieve the topmost item and remove it from the stack. '''
     @abstractmethod
     def pop(self):
-        ''' Retrieve the topmost item and remove it from the stack. '''
         return
 
+    ''' Retrieve the topmost item from the stack. '''
     @abstractmethod
     def peek(self):
-        ''' Retrieve the topmost item from the stack. '''
         return
 
+    ''' Retrieve the number of elements in the stack. '''
     @abstractmethod
     def size(self):
-        ''' Retrieve the number of elements in the stack. '''
         return
 
+    ''' Clear the stack. Remove all elements. '''
     @abstractmethod
     def clear(self):
-        ''' Clear the stack. Remove all elements. '''
         return

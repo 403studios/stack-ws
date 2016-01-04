@@ -8,7 +8,7 @@ With modification by Rob McLeod (rob.mcleod@gmail.com)
 '''
 from abstractStack import AbstractStack
 
-''' LocalStack implementation using a list as a backing datatype.'''
+''' LocalStack class implementation using a list as a backing datatype.'''
 class LocalStack(AbstractStack):
     ''' Constructor '''
     def __init__(self):
