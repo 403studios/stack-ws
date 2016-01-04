@@ -32,8 +32,6 @@ def stackMgr():
     GETs to this endpoint will retrieve all stack instance objects.
     '''
     if request.method == 'GET':
-        for i in WSSTACKLIST:
-            print i
         return str(WSSTACKLIST)
     elif request.method == 'POST':
         stack = FACTORY.getStackFactory()

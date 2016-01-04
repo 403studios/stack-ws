@@ -10,9 +10,11 @@ from abstractStack import AbstractStack
 
 ''' LocalStack class implementation using a list as a backing datatype.'''
 class LocalStack(AbstractStack):
-    ''' Constructor '''
     def __init__(self):
         self.items = []
+
+    def __str__(self):
+        return str(self.items)
 
     def isEmpty(self):
         return self.items == []
