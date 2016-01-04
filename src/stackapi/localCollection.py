@@ -1,11 +1,12 @@
 from abstractStack import AbstractStack
 from collections import deque
 
-'''
-LocalCollection class implementation using a collection as a backing
-datatype.
-'''
+
 class LocalCollection(AbstractStack):
+    """
+    LocalCollection class implementation using a collection as a backing
+    datatype.
+    """
     def __init__(self):
         self.items = deque()
 
