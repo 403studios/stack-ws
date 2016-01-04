@@ -1,15 +1,15 @@
 '''
-Flask debugging features
+Flask debugging features.
 '''
 DEBUG = True
 
 '''
-Flask host argument
+Flask host argument.
 '''
 HOST = '0.0.0.0'
 
 '''
-Flask port argument. None is Flask's default port (5000)
+Flask port argument. None is Flask's default port (5000).
 '''
 PORT = None
 
@@ -22,3 +22,10 @@ Valid choices:
                                   container with fast appends and pops.
 '''
 STACK_FACTORY = 'LocalCollection'
+
+'''
+HTTP Basic auth username and password. Only a single username/password 
+combination is supported.
+'''
+HTTP_AUTH_USERNAME = 'admin'
+HTTP_AUTH_PASSWORD = 'secret'

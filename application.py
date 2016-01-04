@@ -1,6 +1,7 @@
 ''' stack-ws API views. '''
-from flask import Flask, request
+from flask import Flask, request, Response
 from flask.ext.api import status
+from functools import wraps
 from flask.ext.autodoc import Autodoc
 from stackFactory import AbstractStackFactory
 
@@ -10,6 +11,31 @@ AUTO = Autodoc(APPLICATION)
 
 # Stack objects container
 WSSTACKLIST = []
+
+def check_auth(username, password):
+    """
+    This function is called to check if a username and password combination is
+    valid.
+    """
+    return \
+        username == APPLICATION.config['HTTP_AUTH_USERNAME'] and \
+        password == APPLICATION.config['HTTP_AUTH_PASSWORD']
+
+def authenticate():
+    """ Return status code 401 Unauthorized to enable HTTP Basic Auth. """
+    return Response(
+    'Access denied..\n'
+    'You must login with valid credentials', status.HTTP_401_UNAUTHORIZED,
+    {'WWW-Authenticate': 'Basic realm="Login Required"'})
+
+def requires_auth(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        auth = request.authorization
+        if not auth or not check_auth(auth.username, auth.password):
+            return authenticate()
+        return f(*args, **kwargs)
+    return decorated
 
 @APPLICATION.route('/')
 @AUTO.doc()
@@ -23,6 +49,7 @@ def hello():
 # Manage the list of stack objs
 @APPLICATION.route('/stack', methods=['GET', 'POST'])
 @AUTO.doc()
+@requires_auth
 def stackMgr():
     '''
     Manage stack objects.
@@ -30,6 +57,8 @@ def stackMgr():
     data sent with the request is discarded.
 
     GETs to this endpoint will retrieve all stack instance objects.
+
+    All methods require authentication.
     '''
     if request.method == 'GET':
         return str(WSSTACKLIST)
@@ -40,6 +69,7 @@ def stackMgr():
 
 @APPLICATION.route('/stack/<int:id>', methods=['GET', 'POST', 'DELETE'])
 @AUTO.doc()
+@requires_auth
 def stack(id):
     '''
     Manage stack instance object operations.
@@ -54,6 +84,8 @@ def stack(id):
 
     GETs to this endpoint will retrieve the stack instance object. There is no 
     equivalent replacement stack operation.
+
+    All methods require authentication.
 
     All request methods return status code 500 Internal Server Error if an 
     error is encountered. 
@@ -79,22 +111,28 @@ def stack(id):
 
 @APPLICATION.route('/stack/<int:id>/size', methods=['GET'])
 @AUTO.doc()
+@requires_auth
 def stackSize(id):
     '''
     GETs to this endpoint will retrieve the number of elements in the stack 
     instance object.
+
+    All methods require authentication.
     '''
     if request.method == 'GET':
         return str(WSSTACKLIST[id].size())
 
 @APPLICATION.route('/stack/<int:id>/peek', methods=['GET'])
 @AUTO.doc()
+@requires_auth
 def stackPeek(id):
     '''
     GETs to this endpoint will retrieve the topmost element in the stack 
     instance object.
 
-    Returns status code 500 Internal Server Error if an error is encountered. 
+    All methods require authentication.
+
+    Returns status code 500 Internal Server Error if an error is encountered.
     '''
     if request.method == 'GET':
         try:
@@ -104,11 +142,14 @@ def stackPeek(id):
 
 @APPLICATION.route('/stack/<int:id>/clear', methods=['DELETE'])
 @AUTO.doc()
+@requires_auth
 def stackClear(id):
     '''
     Clear all elements of the stack.
     DELETEs to this endpoint will remove all elements from the stack object. 
     Leaves the stack instance object in-place.
+
+    All methods require authentication.
 
     Returns status code 500 Internal Server Error if an error is encountered. 
     '''
@@ -134,4 +175,3 @@ if __name__ == '__main__':
     APPLICATION.run(
         host=APPLICATION.config['HOST'],
         port=APPLICATION.config['PORT'])
-
