@@ -13,7 +13,7 @@ WSSTACKLIST = []
 
 @APPLICATION.route('/')
 @AUTO.doc()
-def main():
+def hello():
     '''
     Test endpoint.
     GETs to this endpoint will retrieve the string 'Hello World'.
