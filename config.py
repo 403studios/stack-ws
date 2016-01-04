@@ -16,6 +16,6 @@ PORT = None
 '''
 Stack implementation to use.
 Valid choices:
-              'Stack' : Python built-in list data type.
+              'LocalStack' : Python built-in list data type.
 '''
-STACK_FACTORY = 'Stack'
+STACK_FACTORY = 'LocalStack'
