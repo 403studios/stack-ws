@@ -1,19 +1,21 @@
-''' stackFactory '''
 from stack import Stack
 
-''' AbstractStackFactory '''
+'''
+AbstractStackFactory is effectively a generic interface to concrete factories 
+of various implementations of the stack datastype.
+'''
 class AbstractStackFactory(object):
-    ''' This is the AbstractStackFactory class. '''
+    ''' Returns a new instance of the Stack Factory. '''
     @staticmethod
     def getStackFactory(factory):
-        ''' Returns a new instance of the Stack Factory. '''
         if factory == 'Stack':
             return StackFactory()
         raise NotImplementedError('Unknown Factory.')
 
-''' StackFactory '''
+'''
+Concrete factory implmenetation for the Stack class.
+'''
 class StackFactory(object):
-    ''' This is the StackFactory class. '''
+    ''' Returns a new instance of the Stack implementation. '''
     def getStackFactory(self):
-        ''' Returns a new instance of the Stack implementation. '''
         return Stack()
