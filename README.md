@@ -17,11 +17,15 @@ Contents:
 ----------
 
 ### Exercise Instructions
-The purpose of this exercise is to learn about an interviewees approach to exploratory testing.
+This exercise is aimed towards learning about an interviewee's approach to the exploratory testing activity. There is no right answer.
 
 Using the session-based testing methodology, you will complete several test sessions each lasting approximately 30 minutes. Keep in mind exploratory testing is not ad-hoc testing. Exploratory testing is simultaneous learning, test design, and test execution.
 
-The goal of each of these test sessions is outlined by a test charter. Test charters are a guideline define your testing mission, and outline what kind of problems to look for. Remember, a big advantage to using session-based testing is flexibility. Good testers are skilled in careful observation, critical thinking, and possess a rich collection of tools, information, and resources. These skills also make testers good detectives. If you discover an oddity during your test session, you may want to explore further and see what you can find. At the very least, this could be used to form subsequent test charters.
+ When using session-based testing remember to be flexible. If you discover an oddity during your session, you may want to explore it further or form subsequent test charters.
+
+The goal of each of these test sessions is outlined by its test charter. Test charters are a guideline for you to define your testing mission and to outline what kind of problems you want to look for. Remember, a big advantage to using session-based testing is flexibility. If you discover an oddity during your session, you may want to explore it further or use this information to form subsequent test charters.
+
+Great testers are skilled in careful observation, critical thinking, and possess a rich collection of tools, information, and resources.
 
 You will be given one or more testing charters. You may also be asked to create some test charters of your own to execute.
 
