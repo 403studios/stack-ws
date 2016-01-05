@@ -17,13 +17,13 @@ Contents:
 ----------
 
 ### Exercise Instructions
-This exercise is aimed towards learning about an interviewee's approach to the exploratory testing activity. There is no right answer.
+This exercise is aimed towards learning about an interviewee's approach to exploratory testing. There is no right answer.
 
 Using the session-based testing methodology, you will complete several test sessions each lasting approximately 30 minutes. Keep in mind exploratory testing is not ad-hoc testing. Exploratory testing is simultaneous learning, test design, and test execution.
 
- When using session-based testing remember to be flexible. If you discover an oddity during your session, you may want to explore it further or form subsequent test charters.
+ When using session-based testing remember to be flexible. If you discover an oddity during your session, you may want to explore it further or use this information to form subsequent test charters.
 
-The goal of each of these test sessions is outlined by its test charter. Test charters are a guideline for you to define your testing mission and to outline what kind of problems you want to look for. Remember, a big advantage to using session-based testing is flexibility. If you discover an oddity during your session, you may want to explore it further or use this information to form subsequent test charters.
+The goal of each of these test sessions is outlined by its test charter. Test charters are a guideline for you to define your testing mission and to outline what kind of problems you want to look for. Remember, a big advantage to using session-based testing is flexibility.
 
 Great testers are skilled in careful observation, critical thinking, and possess a rich collection of tools, information, and resources.
 
@@ -35,7 +35,7 @@ Steps to complete:
 
 2. Create any required test charters. Once complete, set up a quick review session and present your test charters to the team.
 
-3. Execute your test charters. On a small-scale project like this, each test session should take less than 30 minutes. Larger projects will generally have a longer test session time. One of the disadvantages of session-based testing is reproducibility so be sure to gather evidence and take good notes to capture your observations as you're executing your test session. You may be asked to try to reproduce your observations.
+3. Execute your test charters. On a small-scale project like this, each test session should take less than 30 minutes. Larger projects will generally have a longer test session time. One of the disadvantages of session-based testing is reproducibility so be sure to gather evidence and take good notes to capture your observations as you're executing test sessions. You may be asked to try to reproduce your observations.
 
 4. Once complete, review and reflect on your completed test sessions. Some possible questions to ask yourself - What did you do? What did you observe? How do you feel about the quality of this charter? What new testing opportunities have you discovered?
 
