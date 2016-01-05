@@ -18,16 +18,16 @@ This is a sample project for interviewee assignments.
 ### Instructions
 
 ### Installation
-This application has been tested using Ubuntu 14.04 LTS (Trusty Tahr) and MacOS 10.11 (El Capitan).
+This application has been tested using Ubuntu 14.04 LTS (Trusty Tahr) and MacOS 10.11 (El Capitan). All versions of Windows are unsupported - use at your own risk.
 
 The following instructions will install system-wide dependencies. Therefore, [virtualenv](https://pypi.python.org/pypi/virtualenv) is strongly recommended. You will also need to use [git](https://git-scm.com) to clone the source repository.
     
 1. Clone repo:
 
-        git clone https://github.com/403studios/stack-ws
+        $ git clone https://github.com/403studios/stack-ws
 2. Run:
 
-        python setup.py install
+        $ python setup.py install
 
 ### Configuring
 See [application_config.py](https://github.com/403studios/stack-ws/blob/master/src/stackapi/application_config.py) for a description of all configurable options.
@@ -35,7 +35,7 @@ See [application_config.py](https://github.com/403studios/stack-ws/blob/master/s
 ### Running
 All necessary dependencies will be installed during [Installation](#installation). To run:
 
-    run_stack_app
+    $ run_stack_app
 
 ### Examples
 The following examples are provided for convenience. These examples do not represent all available features. See the API [Documentation](#documentation) for a comprehensive list of all capabilities.
