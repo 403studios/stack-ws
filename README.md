@@ -2,7 +2,6 @@
 
 # stack-ws
 
----
 An implementation of the stack data structure using RESTful web services.
 
 This is a sample project for interviewee assignments.
