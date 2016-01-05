@@ -31,18 +31,18 @@ You will be given one or more testing charters. You may also be asked to create 
 
 Steps to complete:
 
-1. Familiarize yourself with the project. You should have received a demo of this project to demonstrate functionality. Review any technologies in use that you aren't familiar with, read documentation provided, review open and recently-closed issues, review code, environment, etc.
+1. Familiarize yourself with the project. Read documentation provided, review any technologies in use that you aren't familiar with, review open and recently-closed issues, review code, environment, etc. You should receive a demo of this project to demonstrate functionality, if you have not please send me an email. 
 
 2. Create any required test charters. Once complete, set up a quick review session and present your test charters to the team.
 
-3. Execute your test charters. On a small-scale project like this, each test session should take less than 30 minutes. Larger projects will generally have a longer test session time. One of the disadvantages of session-based testing is reproducibility so be sure to gather evidence and take good notes to capture your observations as you're executing your test session.
+3. Execute your test charters. On a small-scale project like this, each test session should take less than 30 minutes. Larger projects will generally have a longer test session time. One of the disadvantages of session-based testing is reproducibility so be sure to gather evidence and take good notes to capture your observations as you're executing your test session. You may be asked to try to reproduce your observations.
 
-4. Once complete, review your test sessions. What did you do? What did you observe? How do you feel about the quality of this charter? What new testing opportunities have you discovered?
+4. Once complete, review and reflect on your completed test sessions. Some possible questions to ask yourself - What did you do? What did you observe? How do you feel about the quality of this charter? What new testing opportunities have you discovered?
 
 5. Setup a debriefing session to review your findings and discuss your results.
 
 
-Don't be shy! Ask questions if you're unsure of what to do. The goal of this exercise is not to trick you or evaluate your psychic abilities. We will both get more out of this exercise if you ask questions and provide feedback along the way.
+**Important Note** Don't be shy! Ask questions if you're unsure of what to do. The goal of this exercise is not to trick you or evaluate your psychic abilities. We both get more out of this exercise if you ask questions and provide feedback along the way.
 
 Feel free to use anything you have been given and any tools at your disposal.
 
