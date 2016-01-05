@@ -7,7 +7,7 @@ An implementation of the stack data structure using RESTful web services.
 This is a sample project for interviewee assignments.
 
 Contents:
-  - [Exercise Instructions](#instructions)
+  - [Exercise Instructions](#exercise-instructions)
   - [Installation](#installation)
   - [Configuring](#configuring)
   - [Running](#running)
