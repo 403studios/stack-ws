@@ -19,7 +19,7 @@ Contents:
 ### Exercise Instructions
 This exercise is aimed towards learning about an interviewee's approach to exploratory testing. There is no right answer.
 
-Using the session-based testing methodology, you will complete several test sessions each lasting approximately 30 minutes. Keep in mind exploratory testing is not ad-hoc testing. Exploratory testing is simultaneous learning, test design, and test execution.
+Using the [session-based testing](https://en.wikipedia.org/wiki/Session-based_testing) methodology, you will complete several test sessions each lasting approximately 30 minutes. Keep in mind exploratory testing is not ad-hoc testing. Exploratory testing is simultaneous learning, test design, and test execution.
 
  When using session-based testing remember to be flexible. If you discover an oddity during your session, you may want to explore it further or use this information to form subsequent test charters.
 
