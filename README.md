@@ -31,7 +31,7 @@ You will be given one or more testing charters. You may also be asked to create 
 
 Steps to complete:
 
-1. Familiarize yourself with the project. Read documentation provided, review any technologies in use that you aren't familiar with, review open and recently-closed issues, review code, environment, etc. You should receive a demo of this project to demonstrate functionality, if you have not please send me an email. 
+1. Familiarize yourself with the project. Read documentation provided, review any technologies in use that you aren't familiar with, review open and recently-closed issues, review code, environment, etc. You should receive a demo of this project to demonstrate functionality. If you have not, please send me an email.
 
 2. Create any required test charters. Once complete, set up a quick review session and present your test charters to the team.
 
@@ -41,8 +41,7 @@ Steps to complete:
 
 5. Setup a debriefing session to review your findings and discuss your results.
 
-
-**Important Note** Don't be shy! Ask questions if you're unsure of what to do. The goal of this exercise is not to trick you or evaluate your psychic abilities. We both get more out of this exercise if you ask questions and provide feedback along the way.
+**Important Note:** Don't be shy! Ask questions if you're unsure of what to do. The goal of this exercise is not to trick you or evaluate your psychic abilities. We both get more out of this exercise if you ask questions and provide feedback along the way.
 
 Feel free to use anything you have been given and any tools at your disposal.
 
