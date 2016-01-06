@@ -2,7 +2,7 @@
 Initial implementation from:
 http://interactivepython.org/runestone/static/pythonds/BasicDS/ImplementingaStackinPython.html
 
-With modification by Rob McLeod (rob.mcleod@gmail.com)
+With modification by Rob McLeod (403studiosca@gmail.com)
 2015-12-24
     - Add clear method to clear all elements from the stack
 """

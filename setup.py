@@ -9,9 +9,9 @@ with open(join(CURDIR, 'src', 'stackapi', 'version.py')) as f:
 setup(
     name='stackapi',
     version=VERSION,
-    decription='A test project for interview purpose',
+    decription='An implementation of a stack using RESTful web services',
     author='403Studios',
-    author_email='rob.mcleod@gmail.com',
+    author_email='403studiosca@gmail.com',
     package_dir={'': 'src'},
     packages=['stackapi'],
     url='https://github.com/403studios/stack-ws',
