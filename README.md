@@ -47,9 +47,9 @@ Steps to complete:
   - Issues
   - Bugs
 
-Further info about Test Session Reports can be found [Here](https://simonsaysnomore.wordpress.com/2014/08/19/session-based-test-layout-session-report/).
+  Further info about Test Session Reports can be found [Here](https://simonsaysnomore.wordpress.com/2014/08/19/session-based-test-layout-session-report/).
 
-6. Once all test charters are complete, setup a debriefing session to review your findings and discuss your results.
+5. Once all test charters are complete, setup a debriefing session to review your findings and discuss your results.
 
 **Important Note:** Don't be shy! Ask questions if you're unsure of what to do. The goal of this exercise is not to trick you or evaluate your psychic abilities. We both get more out of this exercise if you ask questions and provide feedback along the way.
 
