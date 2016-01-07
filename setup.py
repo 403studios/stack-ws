@@ -9,7 +9,7 @@ with open(join(CURDIR, 'src', 'stackapi', 'version.py')) as f:
 setup(
     name='stackapi',
     version=VERSION,
-    decription='An implementation of a stack using RESTful web services',
+    description='An implementation of a stack using RESTful web services',
     author='403Studios',
     author_email='403studiosca@gmail.com',
     package_dir={'': 'src'},
