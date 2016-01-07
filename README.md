@@ -78,6 +78,8 @@ All necessary dependencies will be installed during [Installation](#installation
 ### Examples
 The following examples are provided for convenience. These examples do not represent all available features. See the API [Documentation](#documentation) for a comprehensive list of all capabilities.
 
+[Postman](https://www.getpostman.com/) is an excellent tool for testing HTTP-based APIs.
+
 #### Using [cURL](http://curl.haxx.se)
 ###### Create a new stack:
 
