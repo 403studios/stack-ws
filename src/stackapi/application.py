@@ -9,11 +9,12 @@ import httplib as status
 # APPLICATION definition
 APPLICATION = Flask(__name__)
 APPLICATION.config.update(get_config())
+APPLICATION.debug = APPLICATION.config['DEBUG']
 AUTO = Autodoc(APPLICATION)
 
 # Stack objects container
 WSSTACKLIST = []
-FACTORY = None
+FACTORY = AbstractStackFactory.getStackFactory(APPLICATION.config['STACK'])
 
 
 def check_auth(username, password):
@@ -184,14 +185,11 @@ def documentation():
 
 
 def run_application(arguments=None):
-    global FACTORY
-    global APPLICATION
     if arguments:
         # expansion for variable arguments for run_stack_app here
+        # global FACTORY
+        # global APPLICATION
         pass
-    FACTORY = AbstractStackFactory.getStackFactory(
-        APPLICATION.config['STACK_FACTORY'])
-    APPLICATION.debug = APPLICATION.config['DEBUG']
     APPLICATION.run(
         host=APPLICATION.config['HOST'],
         port=APPLICATION.config['PORT'])

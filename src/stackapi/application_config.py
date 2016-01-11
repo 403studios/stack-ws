@@ -21,7 +21,7 @@ Valid choices:
                                   Collections are a high-performance list-like
                                   container with fast appends and pops.
 """
-STACK_FACTORY = 'LocalCollection'
+STACK = 'LocalCollection'
 
 """
 HTTP Basic auth username and password. Only a single username/password
@@ -36,7 +36,7 @@ def get_config():
         "DEBUG": DEBUG,
         "HOST": HOST,
         "PORT": PORT,
-        "STACK_FACTORY": STACK_FACTORY,
+        "STACK": STACK,
         "HTTP_AUTH_USERNAME": HTTP_AUTH_USERNAME,
         "HTTP_AUTH_PASSWORD": HTTP_AUTH_PASSWORD,
     }
