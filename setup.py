@@ -16,7 +16,8 @@ setup(
     packages=['stackapi'],
     url='https://github.com/403studios/stack-ws',
     dependency_links=[
-        'https://github.com/tomchristie/flask-api/tarball/master',
+        'https://github.com/mitsuhiko/flask/tarball/master',
+        'https://github.com/acoomans/flask-autodoc/tarball/master',
     ],
     install_requires=[
         'flask',
