@@ -15,12 +15,19 @@ setup(
     package_dir={'': 'src'},
     packages=['stackapi'],
     url='https://github.com/403studios/stack-ws',
+    dependency_links=[
+        'https://github.com/mitsuhiko/flask/tarball/master',
+        'https://github.com/acoomans/flask-autodoc/tarball/master',
+    ],
+    setup_requires=[
+        'flask',
+    ],
     install_requires=[
         'flask',
-        'flask-api',
         'flask-autodoc',
     ],
     scripts=[
         'src/bin/run_stack_app'
-    ]
+    ],
+    zip_safe=False
 )

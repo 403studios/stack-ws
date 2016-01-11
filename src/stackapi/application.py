@@ -1,10 +1,10 @@
 """ stack-ws API views. """
 from flask import Flask, request, Response
-from flask.ext.api import status
 from functools import wraps
 from flask.ext.autodoc import Autodoc
 from stackapi.stackFactory import AbstractStackFactory
 from stackapi.application_config import get_config
+import httplib as status
 
 # APPLICATION definition
 APPLICATION = Flask(__name__)
@@ -30,7 +30,7 @@ def authenticate():
     """ Return status code 401 Unauthorized to enable HTTP Basic Auth. """
     return Response(
         'Access denied..\n'
-        'You must login with valid credentials', status.HTTP_401_UNAUTHORIZED,
+        'You must login with valid credentials', status.UNAUTHORIZED,
         {'WWW-Authenticate': 'Basic realm="Login Required"'}
     )
 
@@ -104,20 +104,20 @@ def stack(id):
         try:
             return str(WSSTACKLIST[id])
         except (IndexError, ValueError) as exception:
-            return str(exception), status.HTTP_500_INTERNAL_SERVER_ERROR
+            return str(exception), status.INTERNAL_SERVER_ERROR
     # Push to stack
     elif request.method == 'POST':
         try:
             WSSTACKLIST[id].push(request.get_data())
             return request.get_data()
         except (IndexError, ValueError) as exception:
-            return str(exception), status.HTTP_500_INTERNAL_SERVER_ERROR
+            return str(exception), status.INTERNAL_SERVER_ERROR
     # Pop from stack
     elif request.method == 'DELETE':
         try:
             return WSSTACKLIST[id].pop()
         except (IndexError, ValueError) as exception:
-            return str(exception), status.HTTP_500_INTERNAL_SERVER_ERROR
+            return str(exception), status.INTERNAL_SERVER_ERROR
 
 
 @APPLICATION.route('/stack/<int:id>/size', methods=['GET'])
@@ -150,7 +150,7 @@ def stackPeek(id):
         try:
             return str(WSSTACKLIST[id].peek())
         except (IndexError, ValueError) as exception:
-            return str(exception), status.HTTP_500_INTERNAL_SERVER_ERROR
+            return str(exception), status.INTERNAL_SERVER_ERROR
 
 
 @APPLICATION.route('/stack/<int:id>/clear', methods=['DELETE'])
@@ -170,7 +170,7 @@ def stackClear(id):
         try:
             return str(WSSTACKLIST[id].clear())
         except (IndexError, ValueError) as exception:
-            return str(exception), status.HTTP_500_INTERNAL_SERVER_ERROR
+            return str(exception), status.INTERNAL_SERVER_ERROR
 
 
 @APPLICATION.route('/documentation')
