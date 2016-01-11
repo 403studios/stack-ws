@@ -19,6 +19,9 @@ setup(
         'https://github.com/mitsuhiko/flask/tarball/master',
         'https://github.com/acoomans/flask-autodoc/tarball/master',
     ],
+    setup_requires=[
+        'flask',
+    ],
     install_requires=[
         'flask',
         'flask-autodoc',
