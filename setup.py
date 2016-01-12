@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 from os.path import abspath, dirname, join
 
 CURDIR = dirname(abspath(__file__))
@@ -26,11 +26,11 @@ setup(
         'flask',
         'flask-autodoc',
     ],
-    # test_requires=[
-    #     'flask',
-    #     'flask-autodoc',
-    # ],
-    # test_suite="stackapi.tests",
+    tests_require=[
+        'flask',
+        'flask-autodoc',
+    ],
+    test_suite="tests",
     scripts=[
         'src/bin/run_stack_app'
     ],

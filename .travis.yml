@@ -3,3 +3,4 @@ python:
   - "2.7"
 # command to install dependencies
 install: "python setup.py install"
+script: "python setup.py test"
