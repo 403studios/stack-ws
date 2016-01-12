@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/403studios/stack-ws.svg?branch=master)](https://travis-ci.org/403studios/stack-ws)
+
 **Got a question?** Email me!
 
 # stack-ws
