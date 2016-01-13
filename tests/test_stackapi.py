@@ -29,7 +29,8 @@ class HelloTest(BaseTestCase):
 class StackTest(BaseTestCase):
     def test_get_empty_stack(self):
         ret = self.app.get('/stack', headers=self.auth_header(
-            'admin', 'secret')
+            stackapi.APPLICATION.config['HTTP_AUTH_USERNAME'],
+            stackapi.APPLICATION.config['HTTP_AUTH_PASSWORD'])
         )
         assert ret.data, "Stack is not empty!"
 
