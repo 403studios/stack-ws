@@ -14,7 +14,6 @@ Contents:
   - [Running](#running)
   - [Examples](#examples)
   - [Documentation](#documentation)
-
   - [Exercise Instructions](#exercise-instructions)
 ----------
 
