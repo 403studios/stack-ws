@@ -1,5 +1,13 @@
 from setuptools import setup
 from os.path import abspath, dirname, join
+from sys import version_info as python_version
+
+assert python_version >= (2, 7), \
+    "Please upgrade to the latest version of python 2.7, "\
+    "your version of python might not work"
+assert python_version < (3, 0), \
+    "Please use the latest version of python 2.7, "\
+    "this project is not compatible with python 3"
 
 CURDIR = dirname(abspath(__file__))
 with open(join(CURDIR, 'src', 'stackapi', 'version.py')) as f:
