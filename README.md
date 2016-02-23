@@ -82,7 +82,7 @@ This exercise is aimed towrds learning about an interviewee's approach to softwa
 
 Feel free to use anything you have been given and any tools at your disposal.
 
-##### Instructions for Developers
+#### Instructions for Developers
 You will complete several development exercises each lasting approximately 30 minutes.
 
 Steps to complete:
@@ -97,7 +97,15 @@ Steps to complete:
 
 5. Once I receive your submission, I will setup a debriefing session to review your solutions and discuss your results.
 
-##### Instructions for Testers
+**Important Note:** Since this package is version controlled when it is installed, you will need to reinstall your modifications to the source code by running
+```python
+python setup.py install
+``` 
+or invoking the application directly by using 
+```python
+python src/stackapi/application.py
+```
+#### Instructions for Testers
 Great testers are skilled in careful observation, critical thinking, and possess a rich collection of tools, information, and resources.
 
 Using the [session-based testing](https://en.wikipedia.org/wiki/Session-based_testing) methodology, you will complete several test sessions each lasting approximately 30 minutes. Keep in mind exploratory testing is not ad-hoc testing. Exploratory testing is simultaneous learning, test design, and test execution.
