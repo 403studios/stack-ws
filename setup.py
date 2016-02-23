@@ -10,7 +10,7 @@ assert python_version < (3, 0), \
     "this project is not compatible with python 3"
 
 CURDIR = dirname(abspath(__file__))
-with open(join(CURDIR, 'src', 'stackapi', 'version.py')) as f:
+with open(join(CURDIR, 'stackapi', 'version.py')) as f:
     exec(f.read())
     VERSION = get_version()
 
@@ -20,7 +20,6 @@ setup(
     description='An implementation of a stack using RESTful web services',
     author='403Studios',
     author_email='403studiosca@gmail.com',
-    package_dir={'': 'src'},
     packages=['stackapi'],
     url='https://github.com/403studios/stack-ws',
     dependency_links=[
@@ -40,7 +39,7 @@ setup(
     ],
     test_suite="tests",
     scripts=[
-        'src/bin/run_stack_app'
+        'bin/run_stack_app'
     ],
     zip_safe=False
 )
