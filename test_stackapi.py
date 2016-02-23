@@ -1,13 +1,13 @@
 import unittest
-import stackapi
+from stackapi.application import APPLICATION
 from base64 import b64encode
 
 
 class BaseTestCase(unittest.TestCase):
 
     def setUp(self):
-        stackapi.APPLICATION.config['TESTING'] = True
-        self.app = stackapi.APPLICATION.test_client()
+        APPLICATION.config['TESTING'] = True
+        self.app = APPLICATION.test_client()
 
     def tearDown(self):
         pass
@@ -29,8 +29,8 @@ class HelloTest(BaseTestCase):
 class StackTest(BaseTestCase):
     def test_get_empty_stack(self):
         ret = self.app.get('/stack', headers=self.auth_header(
-            stackapi.APPLICATION.config['HTTP_AUTH_USERNAME'],
-            stackapi.APPLICATION.config['HTTP_AUTH_PASSWORD'])
+            APPLICATION.config['HTTP_AUTH_USERNAME'],
+            APPLICATION.config['HTTP_AUTH_PASSWORD'])
         )
         assert ret.data, "Stack is not empty!"
 

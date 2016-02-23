@@ -26,9 +26,10 @@ The following instructions will install system-wide dependencies. Therefore, [vi
 1. Clone repo:
 
         $ git clone https://github.com/403studios/stack-ws
-2. Run:
 
-        $ python setup.py install
+2. Install Dependencies:
+
+        $ pip install -r requirements.txt
 
 ### Configuring
 See [application_config.py](https://github.com/403studios/stack-ws/blob/master/src/stackapi/application_config.py) for a description of all configurable options.
@@ -36,7 +37,7 @@ See [application_config.py](https://github.com/403studios/stack-ws/blob/master/s
 ### Running
 All necessary dependencies will be installed during [Installation](#installation). To run:
 
-    $ run_stack_app
+    $ python run_stack_app.py
 
 ### Examples
 The following examples are provided for convenience. These examples do not represent all available features. See the API [Documentation](#documentation) for a comprehensive list of all capabilities.
