@@ -7,8 +7,9 @@ from stackapi.application_config import get_config
 import httplib as status
 
 # APPLICATION definition
+USER_CONFIG = get_config()
 APPLICATION = Flask(__name__)
-APPLICATION.config.update(get_config())
+APPLICATION.config.update(USER_CONFIG)
 APPLICATION.debug = APPLICATION.config['DEBUG']
 AUTO = Autodoc(APPLICATION)
 
@@ -185,11 +186,13 @@ def documentation():
 
 
 def run_application(arguments=None):
+    print "Got Config:\n {}".format(USER_CONFIG)
     if arguments:
         # expansion for variable arguments for run_stack_app here
         # global FACTORY
         # global APPLICATION
         pass
+
     APPLICATION.run(
         host=APPLICATION.config['HOST'],
         port=APPLICATION.config['PORT'])
