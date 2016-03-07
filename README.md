@@ -32,7 +32,7 @@ The following instructions will install system-wide dependencies. Therefore, [vi
         $ pip install -r requirements.txt
 
 ### Configuring
-See [application_config.py](https://github.com/403studios/stack-ws/blob/master/src/stackapi/application_config.py) for a description of all configurable options.
+See [application_config.py](https://raw.githubusercontent.com/403studios/stack-ws/master/stackapi/application_config.py) for a description of all configurable options.
 
 ### Running
 All necessary dependencies will be installed during [Installation](#installation). To run:
