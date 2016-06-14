@@ -15,6 +15,8 @@ Contents:
   - [Examples](#examples)
   - [Documentation](#documentation)
   - [Exercise Instructions](#exercise-instructions)
+    - [Instructions for Developers](#instructions-for-developers)
+	- [Instructions for Testers](#instructions-for-testers)
 
 ----------
 
