@@ -42,7 +42,7 @@ All necessary dependencies will be installed during [Installation](#installation
     $ python run_stack_app.py
 
 ### Examples
-The following examples are provided for convenience. These examples do not represent all available features. See the API [Documentation](#documentation) for a comprehensive list of all capabilities.
+The following examples are provided for convenience. These examples do not represent all available features. See the [API Documentation](#documentation) for a comprehensive list of all capabilities.
 
 [Postman](https://www.getpostman.com/) is an excellent tool for testing HTTP-based APIs.
 
@@ -79,7 +79,7 @@ Push the string 'foo' to the stack.
 API Documentation is automatically-generated at runtime. Documentation can be accessed at: `http://<host>:<port>/documentation`
 
 ### Exercise Instructions
-This exercise is aimed towrds learning about an interviewee's approach to software development and testing. There is no right answer.
+This exercise is aimed towards learning about an interviewee's approach to software development and testing. There is no right answer.
 
 **Important Note:** Don't be shy! Ask questions if you're unsure of what to do. The goal of this exercise is not to trick you or evaluate your psychic abilities. We both get more out of this exercise if you ask questions and provide feedback along the way.
 
