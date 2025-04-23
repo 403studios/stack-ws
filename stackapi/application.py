@@ -5,6 +5,7 @@ from flask.ext.autodoc import Autodoc
 from stackapi.stackFactory import AbstractStackFactory
 from stackapi.application_config import get_config
 import httplib as status
+import logging
 
 # APPLICATION definition
 USER_CONFIG = get_config()
@@ -106,20 +107,23 @@ def stack(id):
         try:
             return str(WSSTACKLIST[id])
         except (IndexError, ValueError) as exception:
-            return str(exception), status.INTERNAL_SERVER_ERROR
+            logging.error("Error occurred while processing GET request for stack ID %d: %s", id, exception, exc_info=True)
+            return "An internal error occurred.", status.INTERNAL_SERVER_ERROR
     # Push to stack
     elif request.method == 'POST':
         try:
             WSSTACKLIST[id].push(request.get_data())
             return request.get_data()
         except (IndexError, ValueError) as exception:
-            return str(exception), status.INTERNAL_SERVER_ERROR
+            logging.error("Error occurred while processing POST request for stack ID %d: %s", id, exception, exc_info=True)
+            return "An internal error occurred.", status.INTERNAL_SERVER_ERROR
     # Pop from stack
     elif request.method == 'DELETE':
         try:
             return WSSTACKLIST[id].pop()
         except (IndexError, ValueError) as exception:
-            return str(exception), status.INTERNAL_SERVER_ERROR
+            logging.error("Error occurred while processing DELETE request for stack ID %d: %s", id, exception, exc_info=True)
+            return "An internal error occurred.", status.INTERNAL_SERVER_ERROR
 
 
 @APPLICATION.route('/stack/<int:id>/size', methods=['GET'])
