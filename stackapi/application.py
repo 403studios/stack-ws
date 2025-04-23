@@ -1,5 +1,5 @@
 """ stack-ws API views. """
-from flask import Flask, request, Response
+from flask import Flask, request, Response, escape
 from functools import wraps
 from flask.ext.autodoc import Autodoc
 from stackapi.stackFactory import AbstractStackFactory
@@ -112,8 +112,9 @@ def stack(id):
     # Push to stack
     elif request.method == 'POST':
         try:
-            WSSTACKLIST[id].push(request.get_data())
-            return request.get_data()
+            data = request.get_data()
+            WSSTACKLIST[id].push(data)
+            return escape(data)
         except (IndexError, ValueError) as exception:
             logging.error("Error occurred while processing POST request for stack ID %d: %s", id, exception, exc_info=True)
             return "An internal error occurred.", status.INTERNAL_SERVER_ERROR
