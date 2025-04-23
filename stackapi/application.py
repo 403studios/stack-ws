@@ -157,7 +157,8 @@ def stackPeek(id):
         try:
             return str(WSSTACKLIST[id].peek())
         except (IndexError, ValueError) as exception:
-            return str(exception), status.INTERNAL_SERVER_ERROR
+            logging.error("Error in stackPeek: %s", exception, exc_info=True)
+            return "An internal error has occurred.", status.INTERNAL_SERVER_ERROR
 
 
 @APPLICATION.route('/stack/<int:id>/clear', methods=['DELETE'])
@@ -177,7 +178,8 @@ def stackClear(id):
         try:
             return str(WSSTACKLIST[id].clear())
         except (IndexError, ValueError) as exception:
-            return str(exception), status.INTERNAL_SERVER_ERROR
+            logging.error("Error in stackClear: %s", exception, exc_info=True)
+            return "An internal error has occurred.", status.INTERNAL_SERVER_ERROR
 
 
 @APPLICATION.route('/documentation')
